@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 3 - bonus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
+    <script src="angular.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+
+<!-- Faire un formulaire avec les champs nom, e-mail, sujet et texte. Le champ texte doit être un textarea.
+Chaque champ doit avoir son propre message d'erreur si la saisie est incorrecte. -->
+
+
+  <body ng-app="app" >
+    <form ng-controller="appController">
+
+<!-- identifiant -->
+      <label>Nom: </label>
+      <input type="text" name="name" ng-model="name" required>
+      <span ng-show="myForm.name.$error.required">message</span>
+
+
+
+
+
+
+
+<!-- Ajouter un bouton envoyer. Au clic ajouter en dessous du formulaire le sujet du mail.
+Au clic sur un sujet afficher une autre vue avec les autres données saisies (nom, email, sujet et texte). -->
+      <div>
+       <button type="button" ng-disabled="registerForm.$invalid">Confirmer</button>
+
+          </div>
+
+         </form>
+
+
+       <form ng-submit="submit()" ng-controller="ExampleController">
+         Enter text and hit enter:
+         <input type="text" ng-model="text" name="text" />
+         <button type="submit" id="submit" value="Submit">test</button>
+         <pre>list={{list}}</pre>
+       </form>
+
+
+
+  </body>
+</html>

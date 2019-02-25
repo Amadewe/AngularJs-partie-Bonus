@@ -1,0 +1,28 @@
+<form ng-controller="appController" name="myForm" ng-submit="submit()">
+  <div>
+    <label>Nom:</label>
+    <input type="text" name="name" ng-model="name" minlength="2" ng-pattern="regexText" required>
+    <span ng-show="myForm.name.$error.pattern">Merci de bien vouloir rentrer votre Nom en commencant par une majuscule</span>
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="email" name="input" ng-model="email" required>
+    <span ng-show="myForm.input.$error.email">Adresse mail invalide</span>
+  </div>
+  <div>
+    <label>Sujet:</label>
+    <input type="text" name="subject" ng-model="subject" minlength="2" required>
+    <span ng-show="myForm.subject.$error.minlength">Merci de bien vouloir rentrer plus que de caractères</span>
+  </div>
+  <div>
+    <label>Message:</label>
+    <textarea rows="8" cols="80" type="text" name="message" ng-model="message" minlength="2" required></textarea>
+    <span ng-show="myForm.message.$error.minlength">Merci de bien vouloir rentrer plus que de caractères</span>
+  </div>
+  <div>
+    <button type="submit" ng-disabled="registerForm.$invalid">Envoyer</button>
+  </div>
+  <div ng-repeat="formButton in formButtons">
+    <a ng-href="#!/{{$index}}">{{ subject }}</a>
+  </div>
+</form>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 1 - bonus</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script> -->
+  <script src="angular.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="appController">
+  <!-- Si l'adresse comporte le symbole @, alors une div verte apparait.
+  S'il n'est pas là, une div rouge apparaît pour avertir l'utilisateur que sa saisie est incorrecte. -->
+
+  <!-- version 3 -->
+     <form name="myForm">
+      <label>Email:</label>
+      <input type="email" name="input" ng-model="email.text" required>
+
+      <span ng-show="myForm.input.$error.email">erreur</span>
+       <span ng-show="myForm.input.$valid">ok</span>
+  </form>
+
+
+<!-- Version 1 -->
+  <!-- <form name="registerForm" novalidate="true">
+
+     <div>
+         <label for="name"> mail</label>
+         <input type="mail" name="mail"  ng-model="vm.mail" ng-minlength="5" ng-required="true" />
+
+
+         <div ng-messages="registerForm.mail.$error" ng-if="registerForm.mail.$touched">
+             <p ng-style="{color:'green'}" ng-message="required">valide</p>
+             <p ng-style="{color:'red'}" ng-message="minlength">erreur</p>
+         </div>
+     </div>
+
+   </form> -->
+
+
+
+
+<!-- version 2  -->
+   <!-- <form ng-app="" name="myForm">
+       Email:
+       <input type="email" name="myAddress" ng-model="text">
+       <span ng-style="{color:'red'}" ng-show="text = false" >Not a valid e-mail address</span>
+       <span ng-style="{color:'green'}" ng-hide="text = true">ok</span>
+   </form> -->
+
+</body>
+</html>
